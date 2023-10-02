@@ -9,7 +9,7 @@ func main() {
 	i := 1
 	fmt.Print("Prime numbers: ")
 	for {
-		if isPrime(i) {
+		if IsPrime(i) {
 			fmt.Printf("%d, ", i)
 		}
 
@@ -17,7 +17,7 @@ func main() {
 	}
 }
 
-func isPrime(number int) bool {
+func IsPrime(number int) bool {
 	i := 1
 	var isPrime bool = false
 

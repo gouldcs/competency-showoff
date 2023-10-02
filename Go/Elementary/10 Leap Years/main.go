@@ -13,12 +13,12 @@ func main() {
 	fmt.Print("What year is it? ")
 	fmt.Scanf("%d\n", &currentYear)
 
-	var nextLeapYear int = findNextLeapYear(currentYear)
-	printNextLeapYears(numberOfYears, nextLeapYear)
+	var nextLeapYear int = FindNextLeapYear(currentYear)
+	PrintNextLeapYears(numberOfYears, nextLeapYear)
 
 }
 
-func findNextLeapYear(year int) int {
+func FindNextLeapYear(year int) int {
 	if year%4 == 0 {
 		return year + 4
 	}
@@ -34,7 +34,7 @@ func findNextLeapYear(year int) int {
 	}
 }
 
-func printNextLeapYears(leapYearCount int, startYear int) {
+func PrintNextLeapYears(leapYearCount int, startYear int) {
 	nextLeap := startYear
 
 	fmt.Printf("The next %d leap years are: ", leapYearCount)

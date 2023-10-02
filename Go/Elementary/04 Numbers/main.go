@@ -7,10 +7,10 @@ import (
 )
 
 func main() {
-	applyStrategy()
+	ApplyStrategy()
 }
 
-func applyStrategy() {
+func ApplyStrategy() {
 	var input int
 	r := bufio.NewReader(os.Stdin)
 	fmt.Println("Select an option:")
@@ -31,29 +31,29 @@ func applyStrategy() {
 		}
 	}
 
-	var limit int = acceptInput()
+	var limit int = AcceptInput()
 	var sum int
 
 	if input == 1 {
-		sum = calculateSum(limit)
-		prettyPrintResult(limit, sum)
+		sum = CalculateSum(limit)
+		PrettyPrintResult(limit, sum)
 	} else if input == 2 {
-		sum = calculateSumThreeOrFiveOnly(limit)
-		prettyPrintResultThreeOrFiveOnly(limit, sum)
+		sum = CalculateSumThreeOrFiveOnly(limit)
+		PrettyPrintResultThreeOrFiveOnly(limit, sum)
 	} else {
-		var product uint64 = calculateProduct(limit)
-		prettyPrintProduct(limit, product)
+		var product uint64 = CalculateProduct(limit)
+		PrettyPrintProduct(limit, product)
 	}
 }
 
-func acceptInput() int {
+func AcceptInput() int {
 	var input int
 	fmt.Print("Enter a number: ")
 	fmt.Scan(&input)
 	return input
 }
 
-func calculateSum(limit int) int {
+func CalculateSum(limit int) int {
 	var sum int
 
 	for i := 1; i <= limit; i++ {
@@ -63,11 +63,11 @@ func calculateSum(limit int) int {
 	return sum
 }
 
-func calculateSumThreeOrFiveOnly(limit int) int {
+func CalculateSumThreeOrFiveOnly(limit int) int {
 	var sum int
 
 	for i := 1; i <= limit; i++ {
-		if isDivisibleByThreeOrFive(i) {
+		if IsDivisibleByThreeOrFive(i) {
 			sum += i
 		}
 	}
@@ -75,7 +75,7 @@ func calculateSumThreeOrFiveOnly(limit int) int {
 	return sum
 }
 
-func calculateProduct(limit int) uint64 {
+func CalculateProduct(limit int) uint64 {
 	var product uint64 = 1
 
 	for i := uint64(1); i <= uint64(limit); i++ {
@@ -85,7 +85,7 @@ func calculateProduct(limit int) uint64 {
 	return product
 }
 
-func prettyPrintResult(limit int, sum int) {
+func PrettyPrintResult(limit int, sum int) {
 	for i := 1; i <= limit; i++ {
 		if i == 1 {
 			fmt.Printf("%d ", i)
@@ -97,9 +97,9 @@ func prettyPrintResult(limit int, sum int) {
 	fmt.Printf("= %d", sum)
 }
 
-func prettyPrintResultThreeOrFiveOnly(limit int, sum int) {
+func PrettyPrintResultThreeOrFiveOnly(limit int, sum int) {
 	for i := 1; i <= limit; i++ {
-		if isDivisibleByThreeOrFive(i) {
+		if IsDivisibleByThreeOrFive(i) {
 			if i == 3 {
 				fmt.Printf("%d ", i)
 			} else {
@@ -111,7 +111,7 @@ func prettyPrintResultThreeOrFiveOnly(limit int, sum int) {
 	fmt.Printf("= %d", sum)
 }
 
-func prettyPrintProduct(limit int, product uint64) {
+func PrettyPrintProduct(limit int, product uint64) {
 	for i := 1; i <= limit; i++ {
 		if i == 1 {
 			fmt.Printf("%d ", i)
@@ -123,6 +123,6 @@ func prettyPrintProduct(limit int, product uint64) {
 	fmt.Printf("= %d", product)
 }
 
-func isDivisibleByThreeOrFive(number int) bool {
+func IsDivisibleByThreeOrFive(number int) bool {
 	return number%3 == 0 || number%5 == 0
 }

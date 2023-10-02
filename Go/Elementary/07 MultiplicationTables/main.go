@@ -5,11 +5,11 @@ import (
 )
 
 func main() {
-	var multiplicationTable [12][12]int = generateTable()
-	printTable(multiplicationTable)
+	var multiplicationTable [12][12]int = GenerateTable()
+	PrintTable(multiplicationTable)
 }
 
-func generateTable() [12][12]int {
+func GenerateTable() [12][12]int {
 	var multiplicationTable [12][12]int
 
 	for i := 0; i < 12; i++ {
@@ -21,8 +21,8 @@ func generateTable() [12][12]int {
 	return multiplicationTable
 }
 
-func printTable(multiplicationTable [12][12]int) {
-	printHeader()
+func PrintTable(multiplicationTable [12][12]int) {
+	PrintHeader()
 	for i := 0; i < 12; i++ {
 		for j := 0; j < 12; j++ {
 			currentNumber := multiplicationTable[i][j]
@@ -37,7 +37,7 @@ func printTable(multiplicationTable [12][12]int) {
 	}
 }
 
-func printHeader() {
+func PrintHeader() {
 	fmt.Print("*\t|")
 	for i := 1; i < 13; i++ {
 		if i == 1 {
